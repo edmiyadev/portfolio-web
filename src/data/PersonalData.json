@@ -1,0 +1,62 @@
+{
+  "personal": {
+    "firstName": "Edward",
+    "lastName": "Minaya",
+    "title": "Fullstack Developer",
+    "description": "Construyo experiencias digitales excepcionales con tecnologías modernas. Especializado en crear aplicaciones web robustas con código limpio y eficiente.",
+    "email": "edmiya.dev@gmail.com",
+    "social": [
+      {
+        "github": "https://github.com/edmiyadev",
+        "linkedin": "https://www.linkedin.com/in/edward-minaya/"
+      }
+    ]
+  },
+  "skills": [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "Next.js",
+    "Astro",
+    "Tailwind CSS",
+    "Laravel",
+    "PHP",
+    "PostgreSQL"
+  ],
+  "experience": [
+    {
+      "company": "Bitbox Carribe",
+      "position": "Backend Developer",
+      "duration": "2024 - Presente",
+      "description": "loren ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "technologies": ["Laravel", "PostgreSQL", "Docker"]
+    }
+  ],
+  "Projects": [
+    {
+      "name": "Portfolio",
+      "description": "My personal portfolio website.",
+      "technologies": ["React", "Tailwind CSS", "Astro"],
+      "code": "https://github.com/edmiyadev",
+      "live": "https://edmiyadev.com",
+      "image": "https://edmiyadev.com/portfolio.png"
+    },
+    {
+      "name": "Portfolio",
+      "description": "My personal portfolio website.",
+      "technologies": ["React", "Tailwind CSS", "Astro"],
+      "code": "https://github.com/edmiyadev",
+      "live": "https://edmiyadev.com",
+      "image": "https://edmiyadev.com/portfolio.png"
+    },
+    {
+      "name": "Portfolio",
+      "description": "My personal portfolio website.",
+      "technologies": ["React", "Tailwind CSS", "Astro"],
+      "code": "https://github.com/edmiyadev",
+      "live": "https://edmiyadev.com",
+      "image": "https://edmiyadev.com/portfolio.png"
+    }
+  ]
+}
