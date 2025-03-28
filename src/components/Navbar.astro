@@ -1,79 +1,119 @@
 ---
+const styles = {
+  navItem: "flex items-center text-gray-300 hover:text-purple-500 transition-colors duration-300",
+  navBtn: "px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors duration-300 transform hover:scale-105",
+};
+
+const navItems = [
+  { href: "#home", label: "Inicio", className: styles.navItem },
+  { href: "#experience", label: "Experiencia", className: styles.navItem },
+  { href: "#projects", label: "Proyectos", className: styles.navItem },
+  { href: "#about", label: "Sobre Mí", className: styles.navItem },
+  { href: "#contact", label: "Contacto", className: styles.navBtn },
+];
 ---
 
-<header class="fixed w-full bg-gray-950/80 backdrop-blur-sm z-50 border-b border-gray-800">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <div class="flex items-center">
-          <a href="#" id="dev-link" class="text-xl font-bold text-white flex items-center">
-            <span class="text-purple-500">&lt;</span>
-            <span class="mx-1">Dev</span>
-            <span class="text-purple-500">/&gt;</span>
+<header
+  class="fixed w-full bg-gray-950/80 backdrop-blur-sm z-50 border-b border-gray-800"
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center">
+        <a
+          href="#"
+          id="dev-link"
+          class="text-xl font-bold text-white flex items-center"
+        >
+          <span class="text-purple-500">&lt;</span>
+          <span class="mx-1">Dev</span>
+          <span class="text-purple-500">/&gt;</span>
+        </a>
+      </div>
+
+      <nav class="hidden md:flex space-x-8">
+        {
+          navItems.map((item) => (
+            <a href={item.href} class={item.className}>
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="md:hidden">
+        <button
+          id="menu-toggle"
+          class="text-gray-300 hover:text-white focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú móvil -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-gray-900 border-b border-gray-800"
+  >
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class={`block px-3 py-2 rounded-md text-base font-medium ${item.className}`}
+          >
+            {item.label}
           </a>
-        </div>
-        
-        <nav class="hidden md:flex space-x-8">
-          <a href="#home" class="text-gray-300 hover:text-purple-500 transition-colors duration-300">Inicio</a>
-          <a href="#experience" class="text-gray-300 hover:text-purple-500 transition-colors duration-300">Experiencia</a>
-          <a href="#projects" class="text-gray-300 hover:text-purple-500 transition-colors duration-300">Proyectos</a>
-          <a href="#about" class="text-gray-300 hover:text-purple-500 transition-colors duration-300">Sobre Mí</a>
-          <a href="#contact" class="text-gray-300 hover:text-purple-500 transition-colors duration-300">Contacto</a>
-        </nav>
-        
-        <div class="md:hidden">
-          <button id="menu-toggle" class="text-gray-300 hover:text-white focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </div>
+        ))
+      }
     </div>
-    
-    <!-- Menú móvil -->
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-b border-gray-800">
-      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors duration-300">Inicio</a>
-        <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors duration-300">Experiencia</a>
-        <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors duration-300">Proyectos</a>
-        <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors duration-300">Sobre Mí</a>
-        <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors duration-300">Contacto</a>
-      </div>
-    </div>
-  </header>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const menuToggle = document.getElementById('menu-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const devLink = document.getElementById('dev-link');
-      
-      menuToggle?.addEventListener('click', () => {
-        mobileMenu?.classList.toggle('hidden');
-      });
-      
-      // Close mobile menu when clicking on a link
-      const mobileLinks = mobileMenu?.querySelectorAll('a');
-      mobileLinks?.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu?.classList.add('hidden');
-        });
-      });
+  </div>
+</header>
 
-      // Reset animations when clicking the "Dev" link
-      devLink?.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent default anchor behavior
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top smoothly
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const devLink = document.getElementById("dev-link");
 
-        // Reset animations by removing and re-adding the fade-in class
-        const animatedElements = document.querySelectorAll('.fade-in');
-        animatedElements.forEach(element => {
-          const htmlElement = element as HTMLElement; // Cast to HTMLElement
-          htmlElement.classList.remove('fade-in');
-          void htmlElement.offsetWidth; // Trigger reflow to restart animation
-          htmlElement.classList.add('fade-in');
-        });
+    menuToggle?.addEventListener("click", () => {
+      mobileMenu?.classList.toggle("hidden");
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileLinks = mobileMenu?.querySelectorAll("a");
+    mobileLinks?.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu?.classList.add("hidden");
       });
     });
-  </script>
 
+    // Reset animations when clicking the "Dev" link
+    devLink?.addEventListener("click", (event) => {
+      event.preventDefault(); // Prevent default anchor behavior
+      window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top smoothly
+
+      // Reset animations by removing and re-adding the fade-in class
+      const animatedElements = document.querySelectorAll(".fade-in");
+      animatedElements.forEach((element) => {
+        const htmlElement = element as HTMLElement; // Cast to HTMLElement
+        htmlElement.classList.remove("fade-in");
+        void htmlElement.offsetWidth; // Trigger reflow to restart animation
+        htmlElement.classList.add("fade-in");
+      });
+    });
+  });
+</script>
