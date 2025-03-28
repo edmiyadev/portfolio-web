@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #7c3aed; /* Purple */
+  --color-primary-light: #a855f7; /* Lighter Purple */
+  --color-secondary: #ffffff; /* White */
+  --color-background: #1f2937; /* Dark Gray */
+  --color-text: #d1d5db; /* Light Gray */
+}
+
+@layer base {
+  :root {
+    --tw-color-primary: var(--color-primary);
+    --tw-color-primary-light: var(--color-primary-light);
+    --tw-color-secondary: var(--color-secondary);
+    --tw-color-background: var(--color-background);
+    --tw-color-text: var(--color-text);
+  }
+}
