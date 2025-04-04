@@ -5,12 +5,10 @@
     "title": "Fullstack Developer",
     "description": "Construyo experiencias digitales excepcionales con tecnologías modernas. Especializado en crear aplicaciones web robustas con código limpio y eficiente.",
     "email": "edmiya.dev@gmail.com",
-    "social": [
-      {
-        "github": "https://github.com/edmiyadev",
-        "linkedin": "https://www.linkedin.com/in/edward-minaya/"
-      }
-    ]
+    "social": {
+      "github": "https://github.com/edmiyadev",
+      "linkedin": "https://www.linkedin.com/in/edward-minaya-riva-4a280226a/"
+    }
   },
   "skills": [
     "JavaScript",
@@ -24,16 +22,17 @@
     "PHP",
     "PostgreSQL"
   ],
-  "experience": [
-    {
-      "company": "Bitbox Carribe",
-      "position": "Backend Developer",
-      "duration": "2024 - Presente",
-      "description": "loren ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "technologies": ["Laravel", "PostgreSQL", "Docker"]
-    }
-  ],
-  "Projects": [
+  "experience": 
+    [
+      {
+        "company": "Bitbox Carribe",
+        "title": "Backend Developer Jr.",
+        "period": "2024 - Presente",
+        "description": "Participé en el desarrollo y mantenimiento de un CRM interno para la empresa española Ventajon.",
+        "skills": ["Laravel", "PostgreSQL", "Docker"]
+      }
+    ],
+  "projects": [
     {
       "name": "Portfolio",
       "description": "My personal portfolio website.",

@@ -4,7 +4,8 @@ import LinkedinIcon from '../assets/svg/linkedin.svg';
 import EmailIcon from '../assets/svg/email.svg';
 import Data from '../data/PersonalData.json';
 
-const { firstName,  lastName, title, description } = Data.personal;
+const { firstName,  lastName, title, description, email } = Data.personal;
+const { github, linkedin } = Data.personal.social;
 ---
 
 <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
@@ -35,15 +36,15 @@ const { firstName,  lastName, title, description } = Data.personal;
           </div>
           
           <div class="flex gap-6 opacity-0 fade-in delay-500">
-            <a href="https://github.com/edmiyadev" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
+            <a href={github} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
               <GithubIcon/>
             </a>
 
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
+            <a href={linkedin} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
               <LinkedinIcon/>            
             </a>
 
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
+            <a href=`mailto:${email}` class="text-gray-400 hover:text-white transition-colors duration-300">
               <EmailIcon/>            
             </a>
           </div>
@@ -58,12 +59,13 @@ const { firstName,  lastName, title, description } = Data.personal;
     skills: [
       <span class="text-green-400">'JavaScript'</span>, 
       <span class="text-green-400">'TypeScript'</span>, 
-      <span class="text-green-400">'React'</span>, 
-      <span class="text-green-400">'Node.js'</span>,
+      <span class="text-green-400">'PHP'</span>, 
+      <span class="text-green-400">'Laravel'</span>, 
+      <span class="text-green-400">'React'</span>,
       <span class="text-green-400">'Next.js'</span>,
       <span class="text-green-400">'Astro'</span>
     ],
-    passion: <span class="text-green-400">'Creando experiencias web increíbles'</span>
+    passion: <span class="text-green-400">'Crear experiencias web increíbles'</span>
 &#125;;</code></pre>
           </div>
         </div>
