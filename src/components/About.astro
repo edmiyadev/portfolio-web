@@ -1,11 +1,10 @@
 ---
-const skills = [
-  { category: "Frontend", items: ["HTML/CSS", "JavaScript", "TypeScript", "React", "Vue.js", "Next.js", "Astro", "Tailwind CSS"] },
-  { category: "Backend", items: ["Node.js", "Express", "Python", "Django", "PHP", "Laravel", "GraphQL", "REST API"] },
-  { category: "Base de Datos", items: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase"] },
-  { category: "DevOps", items: ["Git", "Docker", "CI/CD", "AWS", "Vercel", "Netlify"] },
-  { category: "Herramientas", items: ["VS Code", "Figma", "Postman", "Jest", "Webpack", "npm/yarn"] }
-];
+import { Image } from 'astro:assets';
+import PhotoImage from '../../public/photo.jpeg';
+import Data from '../data/PersonalData.json';
+
+const { firstName, lastName, title } = Data.personal;
+const { skills } = Data;
 ---
 
 <section id="about" class="py-20 bg-[var(--tw-color-background)]">
@@ -16,20 +15,32 @@ const skills = [
     </div>
     
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- About Content Column -->
       <div class="about-content opacity-0">
         <h3 class="text-2xl font-bold mb-4 text-[var(--tw-color-secondary)]">Mi Trayectoria</h3>
         <p class="text-[var(--tw-color-text)] mb-6">
-          Soy un apasionado desarrollador fullstack con más de 6 años de experiencia creando aplicaciones web. Mi trayectoria comenzó con sitios web simples en HTML y CSS, y ha evolucionado hacia la creación de aplicaciones complejas y escalables utilizando frameworks y tecnologías modernas.
+          Soy un desarrollador especializado en backend con 1 año de experiencia laboral. Mi recorrido profesional se ha enfocado en el desarrollo de APIs, gestión de bases de datos y arquitectura de sistemas, complementado con conocimientos sólidos de tecnologías frontend.
         </p>
         <p class="text-[var(--tw-color-text)] mb-6">
-          Me especializo en crear interfaces responsivas y amigables con React y en construir sistemas backend robustos con Node.js. Estoy en constante aprendizaje y exploración de nuevas tecnologías para mantenerme a la vanguardia del desarrollo web.
-        </p>
-        <p class="text-[var(--tw-color-text)]">
-          Cuando no estoy programando, me puedes encontrar haciendo senderismo en las montañas, leyendo blogs de tecnología o experimentando con nuevos lenguajes y frameworks de programación.
+          Me especializo en construir sistemas backend robustos con Laravel, PHP y bases de datos SQL, mientras mantengo conocimientos de tecnologías frontend como React. Busco constantemente mejorar mis habilidades y aprender nuevas tecnologías para crear soluciones web completas y eficientes.
         </p>
         
+        <!-- Skills Section -->
+        <div class="mb-8">
+          <h4 class="text-xl font-semibold mb-3 text-[var(--tw-color-secondary)]">Habilidades</h4>
+          <div class="flex flex-wrap gap-2">
+            {skills.map(skill => (
+              <span class="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm font-medium rounded-full">{skill}</span>
+            ))}
+          </div>
+        </div>
+        
         <div class="mt-8">
-          <a href="#" class="inline-flex items-center px-6 py-3 bg-[var(--tw-color-primary)] hover:bg-[var(--tw-color-primary-light)] text-[var(--tw-color-secondary)] font-medium rounded-lg transition-colors duration-300 transform hover:scale-105">
+          <a 
+            href="/cv.pdf" 
+            class="inline-flex items-center px-6 py-3 bg-[var(--tw-color-primary)] hover:bg-[var(--tw-color-primary-light)] text-[var(--tw-color-secondary)] font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
+            download
+          >
             Descargar Currículum
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -38,39 +49,34 @@ const skills = [
         </div>
       </div>
       
+      <!-- Profile Image Column -->
       <div class="skills-content opacity-0">
-        <!-- Profile Image Section -->
         <div class="relative mx-auto max-w-md">
           <!-- Glowing Effect Background -->
           <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-purple-900 rounded-xl blur-lg opacity-75 animate-pulse"></div>
           
           <!-- Image Container -->
           <div class="relative rounded-xl overflow-hidden border-2 border-purple-500/50 shadow-2xl">
-            <!-- Replace with your actual image -->
-            <img 
-              src="/placeholder-profile.jpg" 
-              alt="Edward Minaya" 
+            <Image
+              src={PhotoImage}
+              alt={`${firstName} ${lastName}`} 
               class="w-full h-auto object-cover aspect-[3/4]"
-              onerror="this.src='https://placehold.co/600x800/1f2937/7c3aed?text=Edward+Minaya'"
             />
             
             <!-- Overlay with subtle gradient -->
             <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
             
-            <!-- Tech icon decorations (optional) -->
+            <!-- Tech icon decorations -->
             <div class="absolute top-4 right-4 bg-purple-600/80 p-2 rounded-full">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
             </div>
             
             <!-- Caption/Name tag -->
             <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-gray-900 to-transparent">
-              <h3 class="text-xl font-bold text-white">Edward Minaya</h3>
-              <p class="text-purple-300">Fullstack Developer</p>
+              <h3 class="text-xl font-bold text-white">{firstName} {lastName}</h3>
+              <p class="text-purple-300">{title}</p>
             </div>
           </div>
-          
-          <!-- Stats below image -->
-          
         </div>
       </div>
     </div>
@@ -78,22 +84,27 @@ const skills = [
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const aboutContent = document.querySelector('.about-content');
-    const skillsContent = document.querySelector('.skills-content');
+  // Animation with Intersection Observer
+  const animateElements = (selector: string) => {
+    const elements = document.querySelectorAll(selector);
     
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('fade-in');
           (entry.target as HTMLElement).style.opacity = '1';
-          observer.unobserve(entry.target); // Stop observing once animated
+          observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1, rootMargin: '0px' });
     
-    if (aboutContent) observer.observe(aboutContent);
-    if (skillsContent) observer.observe(skillsContent);
+    elements.forEach(el => observer.observe(el));
+  };
+
+  // Initialize animations when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    animateElements('.about-content');
+    animateElements('.skills-content');
   });
 </script>
 
