@@ -34,28 +34,12 @@
     ],
   "projects": [
     {
-      "name": "Portfolio",
-      "description": "My personal portfolio website.",
-      "technologies": ["React", "Tailwind CSS", "Astro"],
-      "code": "https://github.com/edmiyadev",
-      "live": "https://edmiyadev.com",
-      "image": "https://edmiyadev.com/portfolio.png"
-    },
-    {
-      "name": "Portfolio",
-      "description": "My personal portfolio website.",
-      "technologies": ["React", "Tailwind CSS", "Astro"],
-      "code": "https://github.com/edmiyadev",
-      "live": "https://edmiyadev.com",
-      "image": "https://edmiyadev.com/portfolio.png"
-    },
-    {
-      "name": "Portfolio",
-      "description": "My personal portfolio website.",
-      "technologies": ["React", "Tailwind CSS", "Astro"],
-      "code": "https://github.com/edmiyadev",
-      "live": "https://edmiyadev.com",
-      "image": "https://edmiyadev.com/portfolio.png"
+      "name": "Higienist Landing",
+      "description": "Landing page para una Higienista Dental.",
+      "technologies": ["React", "Tailwind CSS"],
+      "code": "https://github.com/edmiyadev/hygienist-landing",
+      "live": "https://hygienist-landing.vercel.app",
+      "image": "../../public/hygienist.png"
     }
   ]
 }
